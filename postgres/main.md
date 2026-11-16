@@ -37,24 +37,42 @@ Every backend app revolves around one fundamental entity: **'Data'**
 ## What matters in learning and working with PostgreSQL?
 ---
 
-- Bare minimums
+- ⭐ Bare minimums \(50%\)
     - Syntax
     - datatypes
     - constraints
     - schema design
-    - writing queries manually
+    - writing queries manually and naturally, being able to reason and understand logic
     - understanding hierarchy and anatomy of postgres \(CLI, GUI, under the hood\)
+    - users and roles
 
-- Knowing the internal architecture
+- Knowing the internal architecture \(40%\)
     - under the hood execution steps/process: `EXPLAIN` and `EXPLAIN ANALYZE`
     - MVCC
     - WAL
     - Autovacuum
-    - How postgres manages data actually in physical memory
+    - ⭐ How postgres actually manages data in physical memory \(Memory = RAM, Storage = Disk\)
     - Shared memory - shared_buffers
-    - process management
-    - ⭐ connections: types\(localhost, socket\) - pooling / connecting to a backend \(ORM\)
+    - ⭐ process management \(MySQL: one single process with lightweight threads. PostgreSQL: multiple independent OS processes\), process-per-connection via TCP
+    - ⭐ connections: types\(localhost, socket\) - pooling\(PgBouncer\) / connecting to a backend \(ORM\)
 
-- Tooling
+- Tooling \(10%\)
     - pgadmin, psql etc
 
+- Monitoring and Observability \(After completing previous concepts and finally working with backend apps\)
+    - there are chances you'll be missing out on some stuff, observability allows you to detect how things work and what can be done, possibly exposing you to something new and important
+    - Database backups
+    - Critical cases
+
+
+### Your 7-day calendar (90–120 min/day)
+
+| Day | Topic | Details | Deliverable |
+| :--- | :--- | :--- | :--- |
+| **Day 01** | Environment + relational foundations | Setup, PostgreSQL hierarchy, `psql`, data types, constraints and your first schema. | Build TeamForge's initial database schema. |
+| **Day 02** | SQL fundamentals | `SELECT`, `WHERE`, filtering, ordering, `NULL`, expressions, `CASE` and `INSERT` basics. | Write simple queries without looking up syntax. |
+| **Day 03** | Relational querying | `JOIN`s, aggregations, `GROUP BY`, `HAVING`, subqueries, `EXISTS` and CTEs. | Solve real multi-table data problems. |
+| **Day 04** | Database design + transactions | Normalization, relationship design, `UPDATE`, `DELETE`, `RETURNING`, transactions and indexes. | Make your schema reliable and modify data safely. |
+| **Day 05** | PostgreSQL architecture + connections | Client-server model, processes, sockets, TCP, authentication, connections and pooling. | Trace a database connection from Node.js to PostgreSQL. |
+| **Day 06** | Memory + PostgreSQL internals | RAM, disk pages, shared buffers, MVCC, WAL, autovacuum and query execution plans. | Understand how data is stored, modified, recovered and retrieved. |
+| **Day 07** | Node integration + revision | Node.js driver, connection pools, parameterized queries and a comprehensive SQL exercise. | Put the concepts together in a small working system. |
