@@ -23,7 +23,7 @@
     - UPDATE table
 
 4. Understanding types of relationships:
-    - 1:1, 1:N, M:N (junction tables)
+    - 1:1, 1:N, M:N (junction tables), Self Referencing (recursive)
 
 5. Types of Keys:
     - Primary Key: non repeating/duplicate, not null, unique identifier (eg. userID)
@@ -44,3 +44,6 @@
     - **3NF**: must be 2NF, no non-key attr must be dependent on another non-key attr
     - **tradeoff**: too much normalization = too much JOIN operations = slows the system
     - Most transactional applications aim for Third Normal Form (3NF) to balance consistency and performance
+
+
+### Day 2: DataTypes and Constraints (datatypes.md), Joins (joins.md)
